@@ -117,7 +117,7 @@ public function handler_format_format($sender)
 	$sender->content = preg_replace("/\[url=(\w{2,6}:\/\/)?([^\]]*?)\](.*?)\[\/url\]/ie", "'<a href=\'' . ('$1' ? '$1' : 'http://') . '$2\' rel=\'nofollow external\' target=\'_blank\'>$3</a>'", $sender->content);
 
 	// Bold: [b]bold text[/b]
-	$sender->content = preg_replace("|\[b\](.*?)\[/b\]|si", "<b>$1</b>", $sender->content);
+	$sender->content = preg_replace("/\[b\](.*?)\[\/b\]/si", "<b>$1</b>", $sender->content);
 
 	// Italics: [i]italic text[/i]
 	$sender->content = preg_replace("/\[i\](.*?)\[\/i\]/si", "<i>$1</i>", $sender->content);
